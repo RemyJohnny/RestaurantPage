@@ -1,0 +1,253 @@
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lilita+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Tsukimi+Rounded:wght@600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap");
+html {
+  scroll-behavior: smooth;
+}
+body {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+#content {
+  position: relative;
+  margin: 0;
+  width: 100%;
+}
+header {
+  background: rgba(0, 0, 0, 0.5) url(./image/Coffee.jpg);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  background-blend-mode: darken;
+}
+.logo {
+  font-family: "Lilita One", cursive;
+  font-size: 2rem;
+  color: white;
+}
+.logoForMobileDevices {
+  display: none;
+  font-family: "Lilita One", cursive;
+  font-size: 2rem;
+  color: white;
+  text-align: center;
+  padding-top: 2rem;
+}
+.navBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.2rem 2rem;
+}
+header ul {
+  padding: 0;
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  font-family: "PT Sans", sans-serif;
+  color: white;
+  cursor: pointer;
+}
+header ul li:hover {
+  transform: scale(1.02);
+}
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 6rem;
+}
+.text {
+  color: white;
+  text-align: right;
+  font-size: 2rem;
+  font-family: "Tsukimi Rounded", sans-serif;
+  width: 25ch;
+}
+.subtext {
+  color: white;
+  font-family: "Roboto", sans-serif;
+  width: 40ch;
+  margin-top: 8rem;
+  align-self: self-start;
+  padding: 2rem;
+}
+#aboutSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+  padding: 5rem 0rem;
+  background: rgb(23, 7, 7);
+}
+.img img {
+  width: 23rem;
+  height: 30rem;
+}
+.aboutText {
+  width: 42ch;
+}
+.aboutText h2 {
+  color: white;
+  margin-top: 0;
+  font-family: "Tsukimi Rounded", sans-serif;
+  font-size: 2rem;
+}
+.aboutText p {
+  color: white;
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+.aboutText button,
+#menu button {
+  height: 2rem;
+  width: 10rem;
+  color: white;
+  background: transparent;
+  border: 2px solid white;
+  font-family: "Roboto", sans-serif;
+  border-radius: 1rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 1rem;
+}
+.aboutText button:hover {
+  border: none;
+  background-color: #a69778;
+  color: black;
+}
+#menu {
+  background: #a69778;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+}
+#menu h2 {
+  text-align: center;
+  font-family: "Tsukimi Rounded", sans-serif;
+  font-size: 3rem;
+  margin-top: 0;
+  color: white;
+}
+#menu ul {
+  list-style: none;
+}
+#menu ul li {
+  height: 2rem;
+  border-bottom: 2px solid white;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.3rem;
+  font-family: "Roboto", sans-serif;
+  align-items: end;
+  cursor: pointer;
+}
+#menu ul li:hover {
+  transform: scale(1.01);
+}
+#menu ul .title {
+  border: none;
+  font-weight: 700;
+  font-size: 1.5rem;
+  cursor: auto;
+}
+#menu button {
+  align-self: self-end;
+  margin-top: 1rem;
+}
+#menu button:hover {
+  border: none;
+  color: #a69778;
+  background-color: white;
+}
+#location {
+  background: rgba(0, 0, 0, 0.7) url(./image/coffeecup.jpg);
+  background-blend-mode: darken;
+  background-position: center;
+  background-size: cover;
+  color: white;
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#location p span {
+  font-size: 1.5rem;
+  font-family: "Tsukimi Rounded", sans-serif;
+}
+#location p {
+  font-size: 1.5rem;
+  font-family: "Roboto", sans-serif;
+  width: 50ch;
+}
+#location h1 {
+  font-family: "Tsukimi Rounded", sans-serif;
+}
+.locate {
+  color: red;
+}
+footer {
+  display: flex;
+  flex-direction: column;
+  background: black;
+  padding: 2rem 5rem;
+  color: beige;
+  gap: 2rem;
+}
+.contact {
+  display: flex;
+  gap: 1rem;
+}
+.contact a {
+  font-size: 1.6rem;
+  color: inherit;
+  cursor: pointer;
+}
+.copyright {
+  align-self: center;
+  font-size: 1rem;
+  font-family: monospace;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+a:hover {
+  transform: scale(1.02);
+}
+@media (orientation: portrait) {
+  #content {
+    margin: 0 auto;
+  }
+  header {
+    background-size: contain;
+    width: 100%;
+  }
+  header ul {
+    flex-direction: row;
+  }
+  #aboutSection {
+    flex-direction: column;
+  }
+  .text {
+    font-size: 2rem;
+    text-align: center;
+  }
+  .subtext {
+    font-size: 1.1rem;
+  }
+  .logo {
+    display: none;
+    font-size: 1rems;
+  }
+  .logoForMobileDevices {
+    display: block;
+  }
+}
