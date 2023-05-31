@@ -1,0 +1,24 @@
+{
+  "name": "restaurantpage",
+  "version": "1.0.0",
+  "description": "a javascript webpage of a restaurant using ES6 Module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RemyJohnny/RestaurantPage.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RemyJohnny/RestaurantPage/issues"
+  },
+  "homepage": "https://github.com/RemyJohnny/RestaurantPage#readme",
+  "devDependencies": {
+    "webpack": "^5.84.1",
+    "webpack-cli": "^5.1.1"
+  }
+}
