@@ -9,18 +9,23 @@ body {
   padding: 0;
   margin: 0;
   width: 100%;
+  position: relative;
 }
 #content {
+  background: rgba(0, 0, 0, 0.7) url(./image/coffeecup.jpg);
+  background-blend-mode: darken;
+  background-position: center;
+  background-size: cover;
   position: relative;
   margin: 0;
   width: 100%;
 }
 header {
-  background: rgba(0, 0, 0, 0.5) url(./image/Coffee.jpg);
-  background-position: center;
-  background-size: cover;
-  background-attachment: fixed;
-  background-blend-mode: darken;
+  background: #2b272a;
+  position: relative;
+  position: sticky;
+  width: 100%;
+  top: 0;
 }
 .logo {
   font-family: "Lilita One", cursive;
@@ -36,10 +41,15 @@ header {
   padding-top: 2rem;
 }
 .navBar {
+  padding-top: 4rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0.2rem 2rem;
+  user-select: none;
+}
+.navBar .links .clicked {
+  color: gold;
 }
 header ul {
   padding: 0;
@@ -49,15 +59,20 @@ header ul {
   font-family: "PT Sans", sans-serif;
   color: white;
   cursor: pointer;
+  height: 1.5rem;
 }
 header ul li:hover {
-  transform: scale(1.02);
+  border-bottom: 2px solid white;
 }
 .hero {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-top: 6rem;
+  display: none;
+}
+.hero.active {
+  display: flex;
 }
 .text {
   color: white;
@@ -65,6 +80,22 @@ header ul li:hover {
   font-size: 2rem;
   font-family: "Tsukimi Rounded", sans-serif;
   width: 25ch;
+}
+.hero ol li {
+  color: white;
+  font-family: "Roboto", sans-serif;
+  margin-top: 0.5rem;
+}
+.hero ol h2 {
+  color: white;
+  text-transform: uppercase;
+  font-family: "Lilita One", cursive;
+}
+.hero ol {
+  margin-top: 4rem;
+  padding-top: 10rem;
+  padding: 10rem 5rem;
+  background: rgba(0, 0, 0, 0.7);
 }
 .subtext {
   color: white;
@@ -80,7 +111,11 @@ header ul li:hover {
   align-items: center;
   gap: 5rem;
   padding: 5rem 0rem;
-  background: rgb(23, 7, 7);
+  padding-top: 10rem;
+  display: none;
+}
+#aboutSection.active {
+  display: flex;
 }
 .img img {
   width: 23rem;
@@ -122,20 +157,35 @@ header ul li:hover {
   color: black;
 }
 #menu {
-  background: #a69778;
-  padding: 3rem;
+  /*background: rgb(2, 0, 36);
+  background: linear-gradient(
+    180deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(161, 161, 161, 1) 100%,
+    rgba(255, 255, 255, 1) 93%
+  );*/
+  /*background: rgba(0, 0, 0, 0.7) url(./image/coffeecup.jpg);
+  background-blend-mode: darken;
+  background-position: center;
+  background-size: cover;*/
   display: flex;
   flex-direction: column;
+  padding-top: 2rem;
+  display: none;
+}
+#menu.active {
+  display: flex;
 }
 #menu h2 {
   text-align: center;
   font-family: "Tsukimi Rounded", sans-serif;
   font-size: 3rem;
-  margin-top: 0;
+  margin: 0;
   color: white;
 }
 #menu ul {
   list-style: none;
+  padding: 2rem;
 }
 #menu ul li {
   height: 2rem;
@@ -159,7 +209,8 @@ header ul li:hover {
 }
 #menu button {
   align-self: self-end;
-  margin-top: 1rem;
+  margin: 2rem;
+  margin-top: 0;
 }
 #menu button:hover {
   border: none;
@@ -167,25 +218,33 @@ header ul li:hover {
   background-color: white;
 }
 #location {
-  background: rgba(0, 0, 0, 0.7) url(./image/coffeecup.jpg);
+  /*background: rgba(0, 0, 0, 0.7) url(./image/coffeecup.jpg);
   background-blend-mode: darken;
   background-position: center;
-  background-size: cover;
+  background-size: cover;*/
   color: white;
   padding: 4rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-top: 3rem;
+  display: none;
 }
-#location p span {
+#location.active {
+  display: flex;
+}
+#location p .branch {
   font-size: 1.5rem;
   font-family: "Tsukimi Rounded", sans-serif;
 }
-#location p {
+#location p .text {
   font-size: 1.5rem;
   font-family: "Roboto", sans-serif;
-  width: 50ch;
+  /*width: 20ch;*/
+}
+#location p {
+  width: 80ch;
 }
 #location h1 {
   font-family: "Tsukimi Rounded", sans-serif;
@@ -196,7 +255,7 @@ header ul li:hover {
 footer {
   display: flex;
   flex-direction: column;
-  background: black;
+  background: rgb(12, 12, 12);
   padding: 2rem 5rem;
   color: beige;
   gap: 2rem;
@@ -222,6 +281,7 @@ a {
 a:hover {
   transform: scale(1.02);
 }
+
 @media (orientation: portrait) {
   #content {
     margin: 0 auto;
@@ -229,25 +289,100 @@ a:hover {
   header {
     background-size: contain;
     width: 100%;
+    top: 0;
+    padding-bottom: 2rem;
   }
+
   header ul {
     flex-direction: row;
+    font-size: 2.3rem;
   }
   #aboutSection {
     flex-direction: column;
   }
   .text {
-    font-size: 2rem;
+    font-size: 4rem;
     text-align: center;
+    width: 20ch;
   }
   .subtext {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
   .logo {
     display: none;
-    font-size: 1rems;
   }
   .logoForMobileDevices {
     display: block;
+    font-size: 3rem;
+    color: red;
+  }
+  .img img {
+    width: 35rem;
+    height: 42rem;
+    padding: 0;
+  }
+  .aboutText {
+    width: auto;
+    padding: 8rem;
+  }
+  .aboutText h2 {
+    font-size: 3rem;
+  }
+  .aboutText p {
+    font-size: 2rem;
+    line-height: 2.3rem;
+  }
+
+  .aboutText button,
+  #menu button {
+    width: 20rem;
+    height: 5rem;
+    border-radius: 2.5rem;
+    font-size: 2.5rem;
+  }
+  #menu ul li {
+    height: 5rem;
+    font-size: 3rem;
+    margin-top: 1rem;
+  }
+  #menu button {
+    margin-top: 5rem;
+    margin-right: 4rem;
+  }
+  #menu ul .title {
+    font-size: 4rem;
+  }
+  #menu {
+    height: 80vh;
+    justify-content: center;
+  }
+  #location {
+    width: auto;
+    height: 70vh;
+    gap: 6rem;
+  }
+  #location P .branch {
+    width: auto;
+    font-size: 3rem;
+  }
+  #location p .text {
+    font-size: 3rem;
+  }
+  .contact a {
+    font-size: 4rem;
+  }
+  .copyright {
+    font-size: 2rem;
+  }
+  footer {
+    padding-top: 10rem;
+  }
+  #location h1 {
+    margin: 0;
+    font-size: 4rem;
+  }
+  header ol {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 5rem 10rem;
   }
 }
